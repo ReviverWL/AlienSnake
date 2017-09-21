@@ -8,7 +8,7 @@ namespace Snake
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WindowWidth = 150;
             Console.WindowHeight = 50;

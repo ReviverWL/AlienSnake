@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    class Line
+    class Line : Figure
     {
-        private List<Point> _line = new List<Point>();
+        private List<Line> _line = new List<Line>();
         private int _firstPoint;
         private int _lastPoint;
         private int _numberLineOnMap;
@@ -25,22 +25,36 @@ namespace Snake
             {                
                 for (int i = firstPoint; i <= lastPoint; i++)
                 {
-                    _line.Add(new Point(i, numberOfDirection, symbol));
+                    _line.Add(new Line(i, numberOfDirection, symbol));
                 }
             }
             else
             {
                 for (int i = firstPoint; i <= lastPoint; i++)
                 {
-                    _line.Add(new Point(numberOfDirection, i, symbol));
+                    _line.Add(new Line(numberOfDirection, i, symbol));
                 }
             }
         }
+        public Line(int x, int y, char symbol)
+        {
+            _firstPoint = x;
+            _numberLineOnMap = y;
+            _symbol = symbol;
+        }
+
+        public void ShowStartPointLine()
+        {
+            Console.SetCursorPosition(_firstPoint, _numberLineOnMap);
+            Console.Write(_symbol);
+        }
+
+
         public void ShowLine()
         {
             for (int i =0; i< _line.Count; i++)
             {
-                _line[i].ShowPoint();
+                _line[i].ShowStartPointLine();
             }
             
         }
