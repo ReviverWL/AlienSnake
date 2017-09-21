@@ -13,6 +13,7 @@ namespace Snake
         private int _lastPoint;
         private int _numberLineOnMap;
         private char _symbol;
+        
 
         public Line(int firstPoint, int lastPoint, int numberOfDirection, char symbol, bool direction)
         {
@@ -34,6 +35,14 @@ namespace Snake
                     _line.Add(new Point(numberOfDirection, i, symbol));
                 }
             }
+        }
+        public void ShowLine()
+        {
+            for (int i =0; i< _line.Count; i++)
+            {
+                _line[i].ShowPoint();
+            }
+            
         }
     }
      

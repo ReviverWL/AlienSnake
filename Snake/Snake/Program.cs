@@ -10,7 +10,7 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Line line = new Line(9, 12, 4, 'r');
+          
         }
     }
 }
