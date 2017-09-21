@@ -10,6 +10,7 @@ namespace Snake
     {
         static void Main(string[] args)
         {
+            GorizontalLine line = new GorizontalLine(9, 12, 4, 'r');
         }
     }
 }
