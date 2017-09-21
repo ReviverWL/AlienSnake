@@ -18,5 +18,10 @@ namespace Snake
             _y = y;
             _symbol = symbol;
         }
+        public void ShowPoint()
+        {
+            Console.SetCursorPosition(_x, _y);
+            Console.Write(_symbol);
+        }
     }
 }
