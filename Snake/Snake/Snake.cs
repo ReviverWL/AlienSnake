@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    class Figure
+    class Snake : Line
     {
+       
     }
 }

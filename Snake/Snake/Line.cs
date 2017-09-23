@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    class Line : Figure
+    class Line
     {
         private List<Line> _line = new List<Line>();
         private int _firstPoint;
         private int _lastPoint;
         private int _numberLineOnMap;
         private char _symbol;
-        
+
+        public Line()
+        {
+        }   
 
         public Line(int firstPoint, int lastPoint, int numberOfDirection, char symbol, bool direction)
         {
