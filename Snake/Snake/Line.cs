@@ -6,23 +6,19 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    class Line
+    class Line : Figure
     {
-        private List<Line> _line = new List<Line>();
-        private int _firstPoint;
+        //private List<Line> _line = new List<Line>();
+        //private int _headPoint;
         private int _lastPoint;
-        private int _numberLineOnMap;
-        private char _symbol;
-
-        public Line()
-        {
-        }   
+        private int _secondAxis;
+        //private char _symbol;
 
         public Line(int firstPoint, int lastPoint, int numberOfDirection, char symbol, bool direction)
         {
-            _firstPoint = firstPoint;
+            _headPoint = firstPoint;
             _lastPoint = lastPoint;
-            _numberLineOnMap = numberOfDirection;
+            _secondAxis = numberOfDirection;
             _symbol = symbol;
             if (direction)
             {                
@@ -41,26 +37,16 @@ namespace Snake
         }
         public Line(int x, int y, char symbol)
         {
-            _firstPoint = x;
-            _numberLineOnMap = y;
+            _headPoint = x;
+            _secondAxis = y;
             _symbol = symbol;
         }
 
         public void ShowStartPointLine()
         {
-            Console.SetCursorPosition(_firstPoint, _numberLineOnMap);
+            Console.SetCursorPosition(_headPoint, _secondAxis);
             Console.Write(_symbol);
-        }
-
-
-        public void ShowLine()
-        {
-            for (int i =0; i< _line.Count; i++)
-            {
-                _line[i].ShowStartPointLine();
-            }
-            
-        }
+        }        
     }
      
 }
