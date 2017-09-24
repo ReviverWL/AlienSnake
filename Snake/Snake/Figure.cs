@@ -9,7 +9,8 @@ namespace Snake
     class Figure
     {
         protected List<Line> _line = new List<Line>();
-        protected int _headPoint;
+        protected int _headPointFirstAxis;
+        protected int _secondAxis;
         protected char _symbol;
 
         public void ShowFigure()

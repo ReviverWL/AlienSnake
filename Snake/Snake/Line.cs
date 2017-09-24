@@ -16,7 +16,7 @@ namespace Snake
 
         public Line(int firstPoint, int lastPoint, int numberOfDirection, char symbol, bool direction)
         {
-            _headPoint = firstPoint;
+            _headPointFirstAxis = firstPoint;
             _lastPoint = lastPoint;
             _secondAxis = numberOfDirection;
             _symbol = symbol;
@@ -37,14 +37,14 @@ namespace Snake
         }
         public Line(int x, int y, char symbol)
         {
-            _headPoint = x;
+            _headPointFirstAxis = x;
             _secondAxis = y;
             _symbol = symbol;
         }
 
         public void ShowStartPointLine()
         {
-            Console.SetCursorPosition(_headPoint, _secondAxis);
+            Console.SetCursorPosition(_headPointFirstAxis, _secondAxis);
             Console.Write(_symbol);
         }        
     }
