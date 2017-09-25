@@ -13,7 +13,6 @@ namespace Snake
             _headPointFirstAxis = x;
             _secondAxis = y;
             _symbol = symbol;
-
         }
     }
 }
