@@ -34,7 +34,7 @@ namespace Snake
             {
                 _line.Add(new Point(x, i, symbol));
             }
-        }
+        }         
     }
      
 }

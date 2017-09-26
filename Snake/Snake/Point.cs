@@ -14,5 +14,17 @@ namespace Snake
             _secondAxis = y;
             _symbol = symbol;
         }
+        public void MovePointAxisX()
+        {
+            _headPointFirstAxis++;
+        }
+        public void MovePointAxisY()
+        {
+            _secondAxis++;
+        }
+        public void Clear()
+        {
+            _symbol = ' ';
+        }
     }
 }
