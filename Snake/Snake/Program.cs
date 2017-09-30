@@ -13,6 +13,9 @@ namespace Snake
             Console.WindowWidth = 150;
             Console.WindowHeight = 50;
             Console.SetBufferSize(150, 50);
+            Snake snake = new Snake(20, 5, Direction.Up);
+            snake.ShowFigure();
+            Console.Read();
         }
     }
 }

@@ -8,15 +8,9 @@ namespace Snake
 {
     class Line : Figure
     {
-
-        private int _lastPointFirstAxis;
-
         public Line(int x1, int x2, char symbol, int y)
         {
-            _headPointFirstAxis = x1;
-            _lastPointFirstAxis = x2;
-            _secondAxis = y;
-            _symbol = symbol;
+            _line = new List<Point>();
 
             for (int i = x1; i <= x2; i++)
             {
@@ -25,10 +19,7 @@ namespace Snake
         }
         public Line(int x, char symbol, int y1, int y2)
         {
-            _headPointFirstAxis = y1;
-            _lastPointFirstAxis = y2;
-            _secondAxis = x;
-            _symbol = symbol;
+            _line = new List<Point>();
 
             for (int i = y1; i <= y2; i++)
             {

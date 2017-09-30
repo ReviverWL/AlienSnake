@@ -7,36 +7,20 @@ using System.Threading.Tasks;
 namespace Snake
 {
     class Snake : Figure
-    {
-        private int _tail;
-
-        public Snake()
+    {        
+        public Snake(int tail, int lenght, Direction direction)
         {
-            _tail = 20;
-            _headPointFirstAxis = 22;            
-            _secondAxis = 20;
-            _symbol = '*';
-            for (int i = _tail; i <= _headPointFirstAxis; i++)
+            _line = new List<Point>();
+            for (int i =0; i < lenght; i++)
             {
-                _line.Add(new Point(i, _secondAxis, _symbol));
-                //if (i == _tail)
-                //{
-                //    _symbol = '#';
-                //}
+                Point head = new Point(tail, 20, '#');
+                head.ShiftPoint(i, direction);
+                _line.Add(head);
             }
         }
         public void Move()
         {
-            Point head = _line[_line.Count - 2];
-            //_line[0].Clear();
-            _line.RemoveAt(0);
-            //int i = 0;
-            //while ( i < _line.Count-1)
-            //{
-            //    _line[i].MovePointAxisX();
-            //    i++;
-            //}
-            //_line.Add(new Point(_tail + 1, _headPointFirstAxis, _symbol));
+            _line.Last().ShiftPoint(1, direction);
         }
     }
 }

@@ -8,16 +8,7 @@ namespace Snake
 {
     class Figure
     {
-        protected List<Point> _line = new List<Point>();
-        protected int _headPointFirstAxis;
-        protected int _secondAxis;
-        protected char _symbol;
-
-        public void ShowPoint()
-        {
-            Console.SetCursorPosition(_headPointFirstAxis, _secondAxis);
-            Console.Write(_symbol);
-        }
+        protected List<Point> _line;       
 
         public void ShowFigure()
         {
