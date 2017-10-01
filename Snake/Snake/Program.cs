@@ -18,6 +18,7 @@ namespace Snake
             while (true)
             {
                 Thread.Sleep(500);
+                snake.ChangeDirect();
                 snake.Move();
                 snake.ShowFigure();
             }
