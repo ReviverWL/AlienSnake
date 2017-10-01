@@ -11,6 +11,11 @@ namespace Snake
         private int _x;
         private int _y;
         private char _symbol;
+
+        public int X { get => _x; }
+        public int Y { get => _y; }
+        public char Symbol { get => _symbol; }
+
         public Point(int x, int y, char symbol)
         {
             _x = x;
@@ -43,14 +48,10 @@ namespace Snake
             }            
         }
 
-        public void MovePointAxisY()
-        {
-            _y++;
-        }
-
         public void Clear()
         {
             _symbol = ' ';
+            ShowPoint();
         }
     }
 }

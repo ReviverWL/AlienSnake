@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Snake
 {
@@ -13,9 +13,15 @@ namespace Snake
             Console.WindowWidth = 150;
             Console.WindowHeight = 50;
             Console.SetBufferSize(150, 50);
-            Snake snake = new Snake(20, 5, Direction.Up);
+            Snake snake = new Snake(20, 6, Direction.Right);
             snake.ShowFigure();
-            Console.Read();
+            while (true)
+            {
+                Thread.Sleep(500);
+                snake.Move();
+                snake.ShowFigure();
+            }
+
         }
     }
 }
