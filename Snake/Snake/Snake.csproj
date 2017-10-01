@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Direction.cs" />
+    <Compile Include="Fastfood.cs" />
     <Compile Include="Figure.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="Point.cs" />
