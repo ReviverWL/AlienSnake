@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Snake
 {
     class Snake : Figure
     {
-        Direction _direction;
+        private Direction _direction;
+
+        public Direction Direct { get => _direction; }
+
         public Snake(int tail, int lenght, Direction direction)
         {
             _direction = direction;
@@ -28,6 +29,22 @@ namespace Snake
             _line[0].Clear();
             _line.RemoveAt(0);
         }
+
+        public bool CollizionFood(Point food)
+        {
+            Point head = _line.Last();
+            if (head.Collizion(food))
+            {
+                food.Symbol = head.Symbol;
+                _line.Add(food);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        
         public void ChangeDirect()
         {
             if (Console.KeyAvailable)

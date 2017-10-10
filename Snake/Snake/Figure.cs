@@ -8,8 +8,8 @@ namespace Snake
 {
     class Figure
     {
-        protected List<Point> _line;       
-
+        protected List<Point> _line;
+        
         public void ShowFigure()
         {
             for (int i = 0; i < _line.Count(); i++)
@@ -18,6 +18,18 @@ namespace Snake
             }
 
         }
-
+        public bool CollizionFigure(Figure figure)
+        {
+            Point head = _line.Last();
+            bool collizion = false;
+            foreach (var point in figure._line)
+            {
+                if (point.Collizion(head))
+                {
+                    collizion = true;
+                }
+            }
+            return collizion;
+        }
     }
 }

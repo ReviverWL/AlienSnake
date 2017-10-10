@@ -14,7 +14,9 @@ namespace Snake
 
         public int X { get => _x; }
         public int Y { get => _y; }
-        public char Symbol { get => _symbol; }
+        public char Symbol { get => _symbol; set => _symbol = value; }
+
+        public Point() { }
 
         public Point(int x, int y, char symbol)
         {
@@ -48,10 +50,27 @@ namespace Snake
             }            
         }
 
+        public bool Collizion(Point point)
+        {
+            return _x == point._x && _y == point._y;
+        }
+
         public void Clear()
         {
             _symbol = ' ';
             ShowPoint();
+        }
+
+        public static Point Fastfood()
+        {
+            Random random = new Random();
+            Point point = new Point
+            {
+                _x = random.Next(1, 98),
+                _y = random.Next(1, 38),
+                _symbol = '@'
+            };
+            return point;
         }
     }
 }
